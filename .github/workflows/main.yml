@@ -12,3 +12,9 @@ jobs:
     steps:
       - name: Print a welcome message
         run: echo "Welcome to our first Github Actions Workflow!"
+
+      - name: Checkout Repository # Checkout means I need to clone the repository
+        uses: actions/checkout@v6.1.0
+
+      - name: List Directory
+        run: ls -la
