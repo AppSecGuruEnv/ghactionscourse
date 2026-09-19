@@ -1,0 +1,14 @@
+name: First Workflow
+
+on:
+  push: # This is the trigger
+    branches: # Below I can list on which branches I need these actions to apply
+      - main
+
+jobs:
+  example-job: # this the name of the job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print a welcome message
+        run: echo "Welcome to our first Github Actions Workflow!"
