@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+      - "release/**" # this is called globbing, it refers to the ** and it means any branch that starts with release/
+    # Not only we can control branches, but also specific path as below
+    path:
+      - "src/**" #any path that starts with src but also under main or release/** only
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6.1.0
+      - name: Run test
+        run: npm test
